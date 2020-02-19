@@ -1,0 +1,31 @@
+@import "src/styles/variables.scss"; 
+.carousel-control-prev{
+  left: -2.177vw !important;
+}
+.carousel-control-prev, .carousel-control-next {
+  top: 35.498vh !important;
+  width: 9% !important;
+  height: 20%;
+  opacity: 1 !important;
+  }
+.carousel-indicators{
+  .active{
+    background: $button-gradient;
+  }
+  li {
+    width: 12px !important; 
+    height: 12px !important;
+    background-color: #C9C9C9 !important;
+    border: none !important;
+    border-radius: 50%;
+  }
+}
+
+.gallery_header{
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 2.580vw;
+  line-height: 3.144vw;
+  margin-top: 2.797vh;
+}

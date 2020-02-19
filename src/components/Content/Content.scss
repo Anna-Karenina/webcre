@@ -1,0 +1,23 @@
+@import "src/styles/variables.scss"; 
+
+.content {
+  font-family: Montserrat;
+  margin-top: 3.225vw;
+}
+.content_header{
+  font-style: normal;
+  font-weight: 600;
+  font-size: $font-24px;
+  line-height: 2.338vw;
+  color: #323232;
+}
+
+.content_paragraph{
+  p{
+    font-style: normal;
+    font-weight: normal;
+    font-size: $font-20px;
+    line-height: 140%;
+    color: #000000;
+  }
+}
