@@ -121,10 +121,10 @@
   &::before{
     border-color: #78CEBF !important;
     color:white;
-    background: url('Checkbox.svg') no-repeat !important;
+    background: url('CheckBox.svg') no-repeat !important;
   }
   &::checked{
-      background: url('Checkbox.svg') no-repeat !important;
+      background: url('CheckBox.svg') no-repeat !important;
       background-color:none;
   }
 }
