@@ -3,8 +3,10 @@
 
 body{
   background-color: #ffffff;
-  height: 1430px;
   font-family: $font-main;
+}
+header{
+  width: 100vw;
 }
 @include media-breakpoint-only(xs){
   h1{
@@ -35,12 +37,55 @@ body{
   }
   .main_form_wrapper {
     display: table-caption !important;
+    width: 80vw;
+    flex-flow: wrap;
+    .data_feilds {
+      flex-direction: column;
+    }
+    .input-group {
+    input{
+    color: -internal-light-dark-color(black, white);
+    -webkit-appearance: textfield;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    margin: 0em;
+    padding: 1px;
+    border: 1px solid #c9c9c9;
+    background-color: inherit;
+    width: 129vh;
+    height: 6vw;
+    }
+    textarea{
+      width: 64.354vw;
+    height: 16.21vw;
+    }
   }
+  }
+  .data_feilds div:nth-last-child(2) {
+    margin-top: 0
 }
-            
+}
+////////////////////////
+//---------------------
 @include media-breakpoint-only(sm){
   .carosel-wrapper-moblile{
     display: none;
+  }
+  .even{
+    max-width: 20vw !important;
+    min-width: 20vw !important;
+    width: 20vw !important;
+    input{
+      height: 3vw !important;
+    }
+  }
+  .odd{
+    max-width: 20vw !important;
+    min-width: 20vw !important;
+    width: 20vw !important;
+    input{
+      height: 3vw !important;
+    }
   }
 }
   
@@ -53,11 +98,22 @@ body{
 @include media-breakpoint-only(lg){
   .carosel-wrapper-moblile{
     display: none;
-  }
-  .even, .odd{
-    max-width: 18vw !important;
-    min-width: 18vw !important;
-    width: 18vw !important;
+    .even{
+      max-width: 18vw !important;
+      min-width: 18vw !important;
+      width: 18vw !important;
+      input{
+        height: 3vw !important;
+      }
+    }
+    .odd{
+      max-width: 18vw !important;
+      min-width: 18vw !important;
+      width: 18vw !important;
+      input{
+        height: 3vw !important;
+      }
+    }
   }
 }
 
@@ -65,10 +121,18 @@ body{
   .carosel-wrapper-moblile{
     display: none;
   }
-  .even, .odd{
-    max-width: 18vw !important;
-    min-width: 18vw !important;
-    width: 18vw !important;
+  .even{
+    max-width: 20.5vw !important;
+    min-width: 20.5vw !important;
+    width: 20.5vw !important;
+    input{
+      height: 3vw !important;
+    }
+  }
+  .odd{
+    max-width: 20.5vw !important;
+    min-width: 20.5vw !important;
+    width: 20.5vw !important;
     input{
       height: 3vw !important;
     }

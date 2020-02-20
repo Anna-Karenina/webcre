@@ -52,7 +52,7 @@ export const ContactForm = (props: MyFormProps & FormikProps<FormValues>) => {
              </label>
              <InputGroup key={i.name} className='field_groups-textarea'>
              {i.type === 'textarea' ? 
-               <Field type={i.type} as = {i.type} name={`${i.name}(2)`} rows = '6' cols="45"/>
+               <Field type={i.type} as = {i.type} name={`${i.name}(2)`} rows = '6' cols="35"/>
               : null}
              </InputGroup> 
              </> 
