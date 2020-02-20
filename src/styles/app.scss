@@ -1,8 +1,76 @@
 @import "variables";
-
+@import 'node_modules/bootstrap/scss/bootstrap.scss';
 
 body{
   background-color: #ffffff;
   height: 1430px;
   font-family: $font-main;
+}
+@include media-breakpoint-only(xs){
+  h1{
+    font-size: 25px !important;
+  }
+  h2{
+    font-size: 20px !important;
+  }
+  p{
+    font-size: 14px !important;
+  }
+  .carosel-wrapper{
+   display: none;
+  }
+  .carousel-indicators{
+    display: none;
+  }
+  .img-fluid {
+    width: 100%;
+  }
+  .carosel-wrapper-moblile{
+    margin: 20px 0;
+  }
+  .custom-control {
+    span{
+      font-size: 8px !important;
+    }
+  }
+  .main_form_wrapper {
+    display: table-caption !important;
+  }
+}
+            
+@include media-breakpoint-only(sm){
+  .carosel-wrapper-moblile{
+    display: none;
+  }
+}
+  
+@include media-breakpoint-only(md){
+  .carosel-wrapper-moblile{
+    display: none;
+  }
+}
+
+@include media-breakpoint-only(lg){
+  .carosel-wrapper-moblile{
+    display: none;
+  }
+  .even, .odd{
+    max-width: 18vw !important;
+    min-width: 18vw !important;
+    width: 18vw !important;
+  }
+}
+
+@include media-breakpoint-only(xl){
+  .carosel-wrapper-moblile{
+    display: none;
+  }
+  .even, .odd{
+    max-width: 18vw !important;
+    min-width: 18vw !important;
+    width: 18vw !important;
+    input{
+      height: 3vw !important;
+    }
+  }
 }

@@ -1,14 +1,16 @@
 import { withFormik, FormikErrors } from 'formik';
-import { InnerForm } from '../components/ContactForm';
+import { ContactForm } from '../components/ContactForm';
+import {getValues} from './../lib/helper'
 
-// type FieldsType ={
-//   name: string;
-//   group: string;
-//   type: string;
-//   label:string
-//   required:boolean
-// }
 
+type FormValuesProps= {
+  name: string
+  phone: number
+  email: string
+  appointment_date: Date
+  'name(2)': string
+  agreement: boolean
+}
 export interface FormValues {
   name?: string;
   group?: string;
@@ -17,12 +19,14 @@ export interface FormValues {
   required?:boolean
 }
 
-
 export interface MyFormProps {
   formdata?:{
     title:string;
     fields: Array<FormValues>;
-    field_groups:any
+    field_groups:{
+      main: string
+      additional:string
+    }
     submit_button:{
       text:string
     }
@@ -31,33 +35,39 @@ export interface MyFormProps {
 
 
 const MyForm = withFormik<MyFormProps, FormValues>({
-  // mapPropsToValues: props => {
-  //   for(let i = 0; i < props.formdata.fields.length; i++){
-  //     return  props.formdata.fields[i].name
-  //   }
-  // },
- // email: props.initialEmail || '',
-        // password: '',
-  validate: (values: FormValues) => {
-    // //let errors: FormikErrors = {};
-    // let errors: any = {};
-    // if (!values.email) {
-    //   errors.email = 'Required';
-    // } 
-    // return errors;
+  mapPropsToValues: (props:MyFormProps & FormValues ) => {
+    let newnames = getValues(props.formdata.fields)
+    let copy:any ={}
+    for(let i = 0; i < newnames.length; i++){
+      copy[newnames[i]] = ''
+    }
+    return copy
+    },
+  validate: (values: FormValuesProps) => {
+    let errors: FormikErrors<FormValuesProps> = {};
+    if (!values.name) {
+      errors.name = 'Обязательно';
+    } 
+    if(!values.phone){
+      errors.phone = 'Обязательно';
+    }
+    if (!values.email) {
+      errors.email = 'Обязательно'
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email) ) {
+      errors.email = 'Здесь должна быть почта'
+    }
+    if(!values.appointment_date){
+      errors.appointment_date = 'Обязательно';
+    }
+    return errors;
   },
 
   handleSubmit: values => {
-    // do submitting things
+    setTimeout(()=>{
+      alert(`Имя :${values}`)
+      console.log(values)
+    }, 3000)
   },
-})(InnerForm);
-
-// const Basic = () => (
-//   <div>
-//     <h1>My App</h1>
-//     <p>This can be anywhere in your application</p>
-//     <MyForm message="Sign up" />
-//   </div>
-// );
+})(ContactForm);
 
 export default MyForm;

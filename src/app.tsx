@@ -2,8 +2,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
 import './styles/app.scss'
-import { Container } from 'react-bootstrap';
-import "bootstrap/scss/bootstrap.scss";
+import { Container, Row, Col } from 'react-bootstrap';
 
 import Footer from './components/Footer/Footer'
 import AppNavbar from './components/Navbar/Navbar'
@@ -32,7 +31,7 @@ function App(){
 
   React.useEffect(() => {
     getItem('https://gist.githubusercontent.com/alexandrov-va/7f353ca822d074d7ce22d3af3d13696f/raw/0907091de6fedf6153cdb718f32a4215dc2c53cf/page.json')
-      .then((res:any) => {
+      .then((res:IData) => {
         setData(res);
         setLoad(true)
     }).catch(err => {
@@ -48,31 +47,33 @@ React.useEffect( ()=>{
      setContent(data.components.find(({ type }) => type === 'GridComponent'))
   }
 })
-
 	return(
     <>
-    {console.log(data)}
-  <header>
-	 <AppNavbar /> 
-  </header>
-   <Container style={{margin: ' 0 5.645vw', padding: 0}}>
-   <main >
-     {
-       gallery === null ? 'Loading ...' : 
-       <Gallery images={gallery.metadata.images} title={gallery.metadata.title} slidesPerView={gallery.metadata.slidesPerView} />
-     }
-     {
-       content === null ? 'Loading ...':
-       <Content content={content.metadata.components} />
-     }
-     {
-       data === null ? 'Loading ...' :
-     <MyForm formdata={data.form} /> 
-     }
-    </main>
-   </Container>
-   <Footer />
-   </>
+    <header>
+    <AppNavbar /> 
+    </header>
+    <Container>
+      <Row>
+        <Col md='auto'  >
+     <main>
+      {
+        gallery === null ? 'Loading ...' : 
+        <Gallery images={gallery.metadata.images} title={gallery.metadata.title} slidesPerView={gallery.metadata.slidesPerView} />
+      }
+      {
+        content === null ? 'Loading ...':
+        <Content content={content.metadata.components} />
+      }
+      {
+        data === null ? 'Loading ...' :
+      <MyForm formdata={data.form} /> 
+      }
+      </main>
+      </Col>
+      </Row>
+    </Container>
+    <Footer />
+    </>
 	)
 }
 

@@ -7,15 +7,43 @@ $theme-green: #479C3F;
 $font-main: Montserrat;
 $font-8px: 0.625vw;
 $font-10px: 0.806vw;
-$font-12px: 0.967vw;
+$font-12px: 0,9375vw;
 $font-14px: 1.129vw;
 $font-16px: 1.290vw;
 $font-18px: 1.451vw;
-$font-20px: 1.612vw;
+$font-20px: 1.563vw;
 
-$font-24px: 1.935vw;
+$font-24px: 1.875vw;
 
-
+//mix
+@mixin h2_headers{
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 2.580vw;
+  line-height: 3.144vw;
+  margin-top:  4.25vh;
+  margin-bottom: 0;
+}
+@mixin mixinput {
+  max-width:  26.36vw;
+  width:  26.36vw;
+  min-width:  26.36vw;
+  margin-right: $font-24px;
+  input{
+    width: 100%;
+    height:3.75vw;
+    &:focus{
+      outline-color: #78CEBF !important;
+    }
+  }
+}
+@mixin labels {
+  font-family: Montserrat;
+    color:#323232;
+    font-size: $font-12px;
+    line-height: 1,171vw;
+}
 // font-style: normal;
 // font-weight: 600;
 // font-size: 16px;

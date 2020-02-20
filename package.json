@@ -28,6 +28,7 @@
     "file-loader": "^5.0.2",
     "formik": "^2.1.4",
     "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.9.0",
     "react": "^16.12.0",
     "react-bootstrap": "^1.0.0-beta.16",
     "react-dom": "^16.12.0",
@@ -35,7 +36,7 @@
     "webpack-dev-server": "^3.10.3"
   },
   "scripts": {
-    "start": "webpack-dev-server --history-api-fallback --inline --progress",
-    "build": "webpack-dev-server --history-api-fallback --inline --progress"
+    "start": "webpack-dev-server --history-api-fallback --inline --progress --DEV",
+    "build": "webpack --mode production"
   }
 }

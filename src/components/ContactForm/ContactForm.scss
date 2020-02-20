@@ -1,0 +1,135 @@
+@import "src/styles/variables.scss"; 
+
+.odd{
+    @include mixinput
+  
+}
+.even{
+    @include mixinput
+  
+}
+.even, .odd{
+  &:last-child{
+    margin-top: $font-24px;
+    margin-right: 0;
+  }
+  label{
+    @include labels
+  }
+}
+.odd:nth-child(2){
+  margin-right: 0;
+}
+.data_feilds{
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.data_feilds {
+  div:nth-last-child(2){
+    margin-top: $font-24px;
+  }
+}
+.main_form{
+  margin-top: 2.12vh ;
+  h2{
+    @include h2_headers;
+  }
+}
+.main_form_wrapper{
+  margin-top: 2vh;
+  display: flex;
+}
+.main_form_wrapper{
+  .col-md-4{
+    label{
+      @include labels
+    }
+    padding: 0;
+  }
+}
+.field_groups-textarea{
+  textarea{
+    border-color:#c9c9c9;
+    &:focus{
+      outline-color: #78CEBF !important;
+    }
+  }
+}
+.custom-control{
+  margin-top: $font-20px;
+  padding: 0;
+  display: flex;
+  align-self: center;
+  left: 2vw;
+  input{
+    width: $font-20px;
+    height: 2.11vh;
+  }
+  label{
+    font-size: $font-12px;
+    font-weight: 300;
+    line-height: $font-16px;
+    margin-bottom: 0;
+    a{
+      color: #78CEBF
+    }
+  }
+}
+.custom-button{
+  margin-top: $font-24px;
+  margin-bottom: 5vw;
+  color:#323232;
+  font-family: $font-main;
+  background-image: $button-gradient;
+  width: 15vw;
+  font-size: $font-14px;
+  font-weight: 600;
+  height: 3.281vw;
+  border-radius: 3px;
+  border: none;
+  &:disabled{
+    background-image:none;
+  }
+}
+.odd{
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    color: rgba(0, 0, 0, 0);
+    opacity: 1;
+    display: block;
+    background: url('./../../../public/images/callendar.svg') no-repeat;
+    width: $font-20px;
+    height: $font-20px;
+    border-width: thin;
+}
+}
+.custom-control-label{
+  &::after{
+    border-color: 1px solid #C9C9C9;
+    outline-color: #78CEBF !important;  
+    border-radius: 2px;
+    opacity: 1;
+    display: block;
+    width: $font-20px;
+    height: $font-20px;
+
+    //background: url('./../../../public/images/Checkbox.svg') no-repeat !important;
+  }&:focus{
+    outline-color: #78CEBF !important;
+  }
+  &::before{
+    border-color: #78CEBF !important;
+    color:white;
+
+    background: url('./../../../public/images/Checkbox.svg') no-repeat !important;
+  }
+  &::checked{
+      background: url('./../../../public/images/Checkbox.svg') no-repeat !important;
+      background-color:none;
+    }
+}
+
+// .custom-control-label:checked{
+//   background: url('./../../../public/images/Checkbox.svg') no-repeat !important;
+// }
