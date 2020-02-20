@@ -1,14 +1,10 @@
 import * as React from 'react';
 import { FormikProps, Form, Field } from 'formik';
 import {  FormValues, MyFormProps } from '../../containers/ContactForm';
-import { Row, Col, InputGroup, Container, Button, FormCheck } from 'react-bootstrap';
+import { InputGroup,  Button, FormCheck } from 'react-bootstrap';
 import './ContactForm.scss'
 
-type OtherProps ={
-
-}
-
-export const ContactForm = (props: OtherProps & MyFormProps & FormikProps<FormValues>) => {
+export const ContactForm = (props: MyFormProps & FormikProps<FormValues>) => {
   const {values, touched, errors, isSubmitting, handleSubmit, formdata:{title ,fields, field_groups,submit_button}} = props;
 
   {console.log(props)}
@@ -75,12 +71,7 @@ export const ContactForm = (props: OtherProps & MyFormProps & FormikProps<FormVa
           id={i.name}
           label ={<span  dangerouslySetInnerHTML={innerHTML}/> }
         >
-          {/*     */}
        </FormCheck>
-      //   <div key={i.name} className='custom-control custom-checkbox'>
-      //     <input type="checkbox" className="custom-control-input" id={i.name} defaultChecked />
-      //     <label htmlFor={i.name} dangerouslySetInnerHTML={innerHTML}/>    
-      //  </div>
         )
        })
      }

@@ -98,7 +98,7 @@
     color: rgba(0, 0, 0, 0);
     opacity: 1;
     display: block;
-    background: url('./../../../public/images/callendar.svg') no-repeat;
+    background: url('../../../public/images/callendar.svg') no-repeat;
     width: $font-20px;
     height: $font-20px;
     border-width: thin;
@@ -113,23 +113,16 @@
     display: block;
     width: $font-20px;
     height: $font-20px;
-
-    //background: url('./../../../public/images/Checkbox.svg') no-repeat !important;
   }&:focus{
     outline-color: #78CEBF !important;
   }
   &::before{
     border-color: #78CEBF !important;
     color:white;
-
-    background: url('./../../../public/images/Checkbox.svg') no-repeat !important;
+    background: url('../../../public/images/Checkbox.svg') no-repeat !important;
   }
   &::checked{
-      background: url('./../../../public/images/Checkbox.svg') no-repeat !important;
+      background: url('../../../public/images/Checkbox.svg') no-repeat !important;
       background-color:none;
     }
 }
-
-// .custom-control-label:checked{
-//   background: url('./../../../public/images/Checkbox.svg') no-repeat !important;
-// }
